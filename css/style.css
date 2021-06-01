@@ -7,14 +7,6 @@
   font-family: 'Baloo 2', cursive, sans-serif;
 }
 
-.profile-img{
-  width: 19%;
-  height: auto;
-}
-
-.profile-icon{
-  width: 20px;
-}
 
 header {
   position: fixed;
@@ -73,7 +65,7 @@ section p {
   font-size: 18px;
 }
 
-section h2 {
+#home h2{
   font-size: 2.5em;
   text-transform: uppercase;
   margin-top: 10px;
@@ -87,6 +79,19 @@ section a {
   background: #111;
   color: #fff;
   margin-top: 20px;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  flex: 50%;
+  padding: 40px;
+   height: 670px;
+   position: relative;
 }
 
 #transparan-back{
@@ -136,15 +141,6 @@ section:nth-child(odd) {
   background-position: bottom;
   color: #fff;
 }
-
-section .list-lapor{
-  margin-left: 50px;
-}
-
-section .list-lapor ul{
-    margin-bottom: 10px;
-}
-
 
 
 @media (max-width: 992px) {
@@ -237,58 +233,173 @@ section .list-lapor ul{
   background-image: url("../aset/back-who.jpg");
 }
 
-.laporan{
-    position: absolute;
-    margin-bottom: 400px;
-    margin-left: 50px;
-  }
+#profile h2{
+  padding-left: 4%;
+}
 
 aside{
   margin-right: 50px;
+
 }
 
 footer{
   text-align: center;
-  position: absolute;
 }
 
-.bersih {
- background-color: #0030db;
- text-decoration: none;
- border-radius: 5px;
- border: 0;
- color: white;
- width: 100px; 
- padding: 7px;
- text-align: center;
- cursor: pointer;
+.drag-area{
+  border: 2px dashed #fff;
+  height: 350px;
+  margin-bottom: 50%;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 1;
 }
-
-.kirim-button{
-  background-color: #f4511e;
+.drag-area.active{
+  border: 2px solid #fff;
+}
+.drag-area .icon{
+  font-size: 100px;
+  color: #fff;
+}
+.drag-area header{
+  font-size: 30px;
+  font-weight: 500;
+  color: #fff;
+}
+.drag-area span{
+  font-size: 25px;
+  font-weight: 500;
+  color: #fff;
+  margin: 10px 0 15px 0;
+}
+.drag-area button{
+  padding: 10px 25px;
+  font-size: 20px;
+  font-weight: 500;
   border: none;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  margin: 4px 2px;
-  opacity: 0.6;
-  transition: 0.3s;
-  display: inline-block;
-  text-decoration: none;
+  outline: none;
+  background: #fff;
+  color: #5256ad;
+  border-radius: 5px;
   cursor: pointer;
-}.kirim-button:hover{
-  opacity: 1;
+}
+.drag-area img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
-#tempel{
-  padding: 10px;
+.prediction{
+  margin-top: 400px;
+  z-index: 2;
+  position: absolute;
+  padding-left: 39%;
 }
 
-#item{
-  border-radius: 4px;
-  border: 1px solid #cdcdcd;
-  padding: .50rem;
-  font-size: .9rem;
-  outline-color: blue;
-  width: 400px;
+.card {
+  position: relative;
+  width: 196px;
+  height: 296px;
+  margin: 20px 20px;
+  background: #fff;
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.25);
+  transition: 1s;
+}
+.card:hover {
+  transform: translateX(50%);
+  object-position: absolute;
+  z-index: 5;
+}
+.card .imgBox {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-origin: left;
+  z-index: 1;
+  transform-style: preserve-3d;
+  background: #000;
+  transition: 1s;
+}
+.card:hover .imgBox {
+  transform: rotateY(-180deg);
+  box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.25);
+}
+.card .imgBox img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+.card .imgBox img:nth-child(2) {
+  transform: rotateY(180deg);
+}
+.card .details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card .details .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+}
+.card .details h2 {
+  text-align: center;
+  font-weight: 700;
+  line-height: 1em;
+  color: #3f3f3f;
+}
+.card .details h2 span {
+  color: #1a1a1a;
+  font-size: 0.8em;
+}
+.card .details .social-icons {
+  position: relative;
+  display: flex;
+  margin-top: 10px;
+}
+.card .details .social-icons a {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  margin: 5px;
+  font-size: 18px;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  background: #333;
+  color: #fff;
+  transition: 0.2s;
+}
+.card .details .social-icons a:hover {
+  background: #d31a02;
+}
+
+figure{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-left:50px;
 }
