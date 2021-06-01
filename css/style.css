@@ -62,7 +62,7 @@ section {
 }
 
 section p {
-  font-size: 18px;
+  font-size: 19px;
 }
 
 #home h2{
@@ -110,6 +110,7 @@ section a {
 #laporin{
   background: linear-gradient(180deg, #2b0118eb, #2b0118d9);
   position: relative;
+  color: #f5f0f0;
 }
 #laporin img{
   width: 36%;
@@ -233,8 +234,9 @@ section:nth-child(odd) {
   background-image: url("../aset/back-who.jpg");
 }
 
-#profile h2{
+#profile h1{
   padding-left: 4%;
+  font-size: 2em;
 }
 
 aside{
@@ -403,3 +405,4 @@ figure{
   flex-wrap: wrap;
   padding-left:50px;
 }
+
