@@ -35,7 +35,7 @@ header ul li {
 header ul li a {
   position: relative;
   padding: 5px 10px;
-  color: #fff;
+  color: #000000;
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
@@ -43,7 +43,7 @@ header ul li a {
 
 header ul li a.active,
 header ul li a:hover {
-  background: #af6b58;
+  background: #e4e4e4a8;
   border-radius: 5px;
 }
 
